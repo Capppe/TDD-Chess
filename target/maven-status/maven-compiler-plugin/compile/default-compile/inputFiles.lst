@@ -1,0 +1,17 @@
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/web/ColorView.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/web/ChessPieceView.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/pieces/Pawn.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/ChessboardImpl.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/pieces/PieceType.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/pieces/ChessPieceStub.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/web/ChessController.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/Game.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/Color.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/pieces/ChessPiece.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/console/ChessboardWriter.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/Chessboard.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/Square.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/GameImpl.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/web/ChessboardView.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/web/ChessApplication.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/main/java/ax/ha/tdd/chess/engine/pieces/ChessPieceBase.java

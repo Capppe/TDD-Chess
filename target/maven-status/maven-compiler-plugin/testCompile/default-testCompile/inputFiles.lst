@@ -1,0 +1,6 @@
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/web/ChessApplicationTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/ChessboardTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/console/ChessboardWriterTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/PawnTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/SquareTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/GameTests.java

@@ -1,0 +1,6 @@
+ax/ha/tdd/chess/web/ChessApplicationTests.class
+ax/ha/tdd/chess/console/ChessboardWriterTests.class
+ax/ha/tdd/chess/engine/PawnTests.class
+ax/ha/tdd/chess/engine/SquareTests.class
+ax/ha/tdd/chess/engine/GameTests.class
+ax/ha/tdd/chess/engine/ChessboardTests.class
