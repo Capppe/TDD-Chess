@@ -19,9 +19,7 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
         if(chessboard.getPieceAt(destination) != null){
             return getAvailableTakes(chessboard).contains(destination);
         }
-        if(!getAvailableMoves().contains(destination)) { return false; }
-
-        return true;
+        return getAvailableMoves().contains(destination);
     }
 
     private List<Square> getAvailableMoves() {
@@ -77,11 +75,6 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
         if(pieceDiagRight != null && pieceDiagRight.getColor() != this.color) {
             takes.add(pieceDiagRight.getLocation());
         }
-
-        pieceDiagLeft = chessboard.getPieceAt(new Square(this.location.getX()+1, this.location.getY()-1));
-        System.out.println("PieceDiagRight: " + pieceDiagRight);
-        System.out.println("PieceDiagLeft: " + pieceDiagLeft);
-        System.out.println("Available takes: " + takes);
         return takes;
     }
 }
