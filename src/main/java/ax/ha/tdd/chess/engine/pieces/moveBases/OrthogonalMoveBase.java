@@ -1,18 +1,26 @@
-package ax.ha.tdd.chess.engine.pieces;
+package ax.ha.tdd.chess.engine.pieces.moveBases;
 
 import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Color;
 import ax.ha.tdd.chess.engine.Square;
+import ax.ha.tdd.chess.engine.pieces.ChessPieceBase;
+import ax.ha.tdd.chess.engine.pieces.PieceType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class OrthogonalMoveBase extends ChessPieceBase{
+public class OrthogonalMoveBase extends ChessPieceBase implements OrthogonalMovable {
     public OrthogonalMoveBase(PieceType type, Color player, Square location) {
         super(type, player, location);
     }
 
-    protected List<Square> getAvailableMoves(Chessboard chessboard) {
+    @Override
+    public boolean canMove(Chessboard chessboard, Square destination) {
+        if(!getAvailableMoves(chessboard).contains(destination)) { return false; }
+        return true;
+    }
+
+    public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
         int[] deltas = {-1, 1};
 
