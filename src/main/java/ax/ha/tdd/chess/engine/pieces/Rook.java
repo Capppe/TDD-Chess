@@ -12,8 +12,6 @@ public class Rook extends OrthogonalMoveBase implements ChessPiece {
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        //if(!getAvailableMoves(chessboard).contains(destination)) { return false; }
-        //return true;
         return super.canMove(chessboard, destination);
     }
 }
