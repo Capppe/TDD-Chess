@@ -7,7 +7,7 @@ import ax.ha.tdd.chess.engine.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pawn extends ChessPieceBase implements ChessPiece{
+public class Pawn extends ChessPieceBase implements ChessPiece {
 
     public Pawn(Color player, Square location) {
         super(PieceType.PAWN, player, location);
@@ -15,26 +15,32 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        //TODO here goes move logic for pawns
         if(chessboard.getPieceAt(destination) != null){
             return getAvailableTakes(chessboard).contains(destination);
         }
-        return getAvailableMoves().contains(destination);
+        return getAvailableMoves(chessboard).contains(destination);
     }
 
-    private List<Square> getAvailableMoves() {
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return getAvailableTakes(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.BLACK: Color.WHITE));
+    }
+
+    public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
+        int posX = this.location.getX();
+        int posY = this.location.getY();
 
         if(isFirstMove()) {
-            moves.add(new Square(this.location.getX(), this.location.getY() + (this.color == Color.WHITE ? -2 : +2)));
-            moves.add(new Square(this.location.getX(), this.location.getY() + (this.color == Color.WHITE ? -1 : +1)));
-        } else if(this.location.getY() > -1 && this.location.getY() < 8){
-            moves.add(new Square(this.location.getX(), this.location.getY() + (this.color == Color.WHITE ? -1 : +1)));
+            moves.add(new Square(posX, posY + (this.color == Color.WHITE ? -2 : +2)));
+            moves.add(new Square(posX, posY + (this.color == Color.WHITE ? -1 : +1)));
+        } else if(posY > 0 && posY < 7){
+            moves.add(new Square(posX, posY + (this.color == Color.WHITE ? -1 : +1)));
         }
 
         if(canPromote()) {
             //TODO handle promotion
-            moves.add(new Square(this.location.getX(), this.location.getY() + (this.color == Color.WHITE ? -1 : +1)));
+            moves.add(new Square(posX, posY + (this.color == Color.WHITE ? -1 : +1)));
         }
 
         return moves;
@@ -58,15 +64,17 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
 
     private List<Square> getAvailableTakes(Chessboard chessboard) {
         List<Square> takes = new ArrayList<>();
-        ChessPiece pieceDiagLeft;
-        ChessPiece pieceDiagRight;
+        ChessPiece pieceDiagLeft = null;
+        ChessPiece pieceDiagRight = null;
+        int posX = this.location.getX();
+        int posY = this.location.getY();
 
-        if(this.color == Color.WHITE) {
-            pieceDiagLeft = chessboard.getPieceAt(new Square(this.location.getX() - 1, this.location.getY() - 1));
-            pieceDiagRight = chessboard.getPieceAt(new Square(this.location.getX() + 1, this.location.getY() - 1));
+        if (this.color == Color.WHITE) {
+            if(posX - 1 > -1 && posY - 1 > -1) { pieceDiagLeft = chessboard.getPieceAt(new Square(posX - 1, posY - 1)); }
+            if(posX + 1 < 8 && posY - 1 > -1) { pieceDiagRight = chessboard.getPieceAt(new Square(posX + 1, posY - 1)); }
         } else {
-            pieceDiagLeft = chessboard.getPieceAt(new Square(this.location.getX() + 1, this.location.getY() + 1));
-            pieceDiagRight = chessboard.getPieceAt(new Square(this.location.getX() - 1, this.location.getY() + 1));
+            if(posX + 1 < 8 && posY + 1 < 8) { pieceDiagLeft = chessboard.getPieceAt(new Square(posX + 1, posY + 1)); }
+            if(posX - 1 > -1 && posY + 1 < 8) { pieceDiagRight = chessboard.getPieceAt(new Square(posX - 1, posY + 1)); }
         }
 
         if(pieceDiagLeft != null && pieceDiagLeft.getColor() != this.color) {

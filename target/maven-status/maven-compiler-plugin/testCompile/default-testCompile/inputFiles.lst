@@ -1,6 +1,11 @@
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/BishopTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/QueenTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/RookTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/web/ChessApplicationTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/ChessboardTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/console/ChessboardWriterTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/PawnTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/SquareTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/KnightTests.java
 /home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/GameTests.java
+/home/cappe/School/TDD/HA-TDD-Chess/src/test/java/ax/ha/tdd/chess/engine/KingTests.java

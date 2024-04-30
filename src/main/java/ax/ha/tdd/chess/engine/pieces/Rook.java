@@ -14,4 +14,9 @@ public class Rook extends OrthogonalMoveBase implements ChessPiece {
     public boolean canMove(Chessboard chessboard, Square destination) {
         return super.canMove(chessboard, destination);
     }
+
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return this.getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.BLACK: Color.WHITE));
+    }
 }

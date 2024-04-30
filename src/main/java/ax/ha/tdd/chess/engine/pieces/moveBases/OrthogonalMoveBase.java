@@ -20,6 +20,11 @@ public class OrthogonalMoveBase extends ChessPieceBase implements OrthogonalMova
         return true;
     }
 
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return this.getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.WHITE : Color.BLACK));
+    }
+
     public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
         int[] deltas = {-1, 1};

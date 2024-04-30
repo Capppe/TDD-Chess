@@ -16,10 +16,16 @@ public class DiagonalMoveBase extends ChessPieceBase implements DiagonalMovable 
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        if(!getAvailableMoves(chessboard).contains(destination)) { return false; }
-        return true;
+        System.out.println("MOVES: " + getAvailableMoves(chessboard));
+        return getAvailableMoves(chessboard).contains(destination);
     }
 
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return this.getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.WHITE : Color.BLACK));
+    }
+
+    @Override
     public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
 
@@ -28,9 +34,10 @@ public class DiagonalMoveBase extends ChessPieceBase implements DiagonalMovable 
                 int i = 1;
                 int locX = this.location.getX();
                 int locY = this.location.getY();
-                while (locX < 7 && locX > 0 && locY < 7 && locY > 0) {
+                while (true) {
                     locX = this.location.getX() + i * dx;
                     locY = this.location.getY() + i * dy;
+                    if(locX > 7 || locX < 0 || locY > 7 || locY < 0) { break; }
 
                     Square square = new Square(locX, locY);
                     if (chessboard.getPieceAt(square) == null) {

@@ -4,6 +4,8 @@ import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.Color;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class ChessPieceBase implements ChessPiece {
@@ -34,6 +36,9 @@ public abstract class ChessPieceBase implements ChessPiece {
         return location;
     }
 
+    public void setLocation(Square square) {
+        this.location = square;
+    }
 
     /**
      * Suggestion of design:
@@ -46,6 +51,30 @@ public abstract class ChessPieceBase implements ChessPiece {
      * @return true if piece can move to the destination
      */
     public abstract boolean canMove(final Chessboard chessboard, final Square destination);
+
+    public abstract List<Square> getAvailableMoves(Chessboard chessboard);
+
+    public List<Square> getMovesToSquare(Chessboard chessboard, Square square) {
+        List<Square> moves = new ArrayList<>();
+
+        if(!this.canMove(chessboard, square)) { return moves; }
+
+        int locX = this.location.getX();
+        int locY = this.location.getY();
+        while(locX != square.getX() && locY != square.getY()) {
+            
+        }
+
+        return moves;
+    }
+
+    @Override
+    public boolean canBlockCheck(Chessboard chessboard, ChessPiece checkingPiece) {
+        List<Square> checkingPieceMoves = checkingPiece.getAvailableMoves(chessboard);
+        List<Square> blockingPieceMoves = this.getAvailableMoves(chessboard);
+
+        return blockingPieceMoves.stream().anyMatch(checkingPieceMoves::contains);
+    }
 
     @Override
     public boolean equals(Object o) {

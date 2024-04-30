@@ -18,7 +18,12 @@ public class Knight extends ChessPieceBase implements ChessPiece{
         return true;
     }
 
-    private List<Square> getAvailableMoves(Chessboard chessboard) {
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.BLACK: Color.WHITE));
+    }
+
+    public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
 
         int locX = this.location.getX();

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ax.ha.tdd.chess.web.ChessApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.594 s -- in ax.ha.tdd.chess.web.ChessApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.702 s -- in ax.ha.tdd.chess.web.ChessApplicationTests

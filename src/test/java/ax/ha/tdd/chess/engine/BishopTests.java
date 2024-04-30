@@ -21,11 +21,11 @@ public class BishopTests {
         String[] moves = {"c5", "b6", "a7", "e5", "f6", "c3", "b2", "e3", "f2", "a1"};
         for(String move : moves) {
             assertTrue(bishop.canMove(chessboard, new Square(move)));
+            System.out.println(new ChessboardWriter().print(chessboard));
         }
 
         //For debugging, you can print the board to console, or if you want
         //to implement a command line interface for the game
-        System.out.println(new ChessboardWriter().print(chessboard));
     }
 
     @Test

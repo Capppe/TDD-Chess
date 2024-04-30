@@ -15,10 +15,13 @@ public class PawnTests {
         //Arrange
         Chessboard chessboard = new ChessboardImpl();
         Pawn pawn = new Pawn(Color.WHITE, new Square("e2"));
+        Pawn pawn2 = new Pawn(Color.BLACK, new Square("d5"));
         chessboard.addPiece(pawn);
+        chessboard.addPiece(pawn2);
 
         //Assert
         assertFalse(pawn.canMove(chessboard, new Square("e1")));
+        assertFalse(pawn2.canMove(chessboard, new Square("d6")));
 
         //For debugging, you can print the board to console, or if you want
         //to implement a command line interface for the game
@@ -39,10 +42,10 @@ public class PawnTests {
     @Test
     public void testMovePawnForwardsTwoStepsFirstMove() {
         Chessboard chessboard = new ChessboardImpl();
-        Pawn pawn = new Pawn(Color.WHITE, new Square("e2"));
+        Pawn pawn = new Pawn(Color.WHITE, new Square("a2"));
         chessboard.addPiece(pawn);
 
-        assertTrue(pawn.canMove(chessboard, new Square("e4")));
+        assertTrue(pawn.canMove(chessboard, new Square("a4")));
 
         System.out.println(new ChessboardWriter().print(chessboard));
     }
@@ -75,12 +78,12 @@ public class PawnTests {
     @Test
     public void testTakePieceLegalMove() {
         Chessboard chessboard = new ChessboardImpl();
-        Pawn pawn = new Pawn(Color.WHITE, new Square("b2"));
-        Pawn pawn2 = new Pawn(Color.BLACK, new Square("c3"));
+        Pawn pawn = new Pawn(Color.WHITE, new Square("b4"));
+        Pawn pawn2 = new Pawn(Color.BLACK, new Square("a5"));
         chessboard.addPiece(pawn);
         chessboard.addPiece(pawn2);
 
-        assertTrue(pawn.canMove(chessboard, new Square("c3")));
+        assertTrue(pawn.canMove(chessboard, new Square("a5")));
 
         Pawn pawn3 = new Pawn(Color.BLACK, new Square("c6"));
         Pawn pawn4 = new Pawn(Color.WHITE, new Square("d5"));

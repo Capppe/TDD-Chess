@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface DiagonalMovable {
     List<Square> getAvailableMoves(Chessboard chessboard);
+    void setLocation(Square square);
 }

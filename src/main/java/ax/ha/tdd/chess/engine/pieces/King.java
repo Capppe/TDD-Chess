@@ -17,7 +17,13 @@ public class King extends ChessPieceBase implements ChessPiece {
         return getAvailableMoves(chessboard).contains(destination);
     }
 
-    private List<Square> getAvailableMoves(Chessboard chessboard) {
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        //return getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.WHITE : Color.BLACK));
+        return false;
+    }
+
+    public List<Square> getAvailableMoves(Chessboard chessboard) {
         List<Square> moves = new ArrayList<>();
         int[][] directions = {
                 {1, 0},
@@ -51,5 +57,9 @@ public class King extends ChessPieceBase implements ChessPiece {
 
     private boolean isOutOfBounds(int x, int y) {
         return x > 7 || x < 0 || y > 7 || y < 0;
+    }
+
+    private boolean canCastle() { //TODO implement
+        return false;
     }
 }

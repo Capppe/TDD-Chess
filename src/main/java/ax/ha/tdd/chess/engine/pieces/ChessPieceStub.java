@@ -4,6 +4,8 @@ import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.Color;
 
+import java.util.List;
+
 /**
  *  Stub class in order to output a correct chessboard.
  *  This class should be deleted after implementations are done.
@@ -23,5 +25,15 @@ public class ChessPieceStub extends ChessPieceBase {
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
         throw new UnsupportedOperationException("canMove has/will not be implemented in stub class");
+    }
+
+    @Override
+    public List<Square> getAvailableMoves(Chessboard chessboard) {
+        throw new UnsupportedOperationException("will not be implemented");
+    }
+
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        throw new UnsupportedOperationException("will not be implemented");
     }
 }

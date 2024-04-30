@@ -14,4 +14,15 @@ public class Bishop extends DiagonalMoveBase implements ChessPiece {
     public boolean canMove(Chessboard chessboard, Square destination) {
         return super.canMove(chessboard, destination);
     }
+
+    @Override
+    public void setLocation(Square square) {
+        this.location = square;
+        super.setLocation(square);
+    }
+
+    @Override
+    public boolean canTakeKing(Chessboard chessboard) {
+        return getAvailableMoves(chessboard).contains(chessboard.getKingSquare(this.color == Color.WHITE ? Color.BLACK: Color.WHITE));
+    }
 }
